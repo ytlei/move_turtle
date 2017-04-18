@@ -1,6 +1,13 @@
 <launch>
 
+ <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+        <arg name="world_file" value="$(find move_turtle)/world/myplayground"/>
+ </include>
+
+
+<!-- Turtlesim Node
 <node pkg="turtlebot_gazebo" type="turtlebot_world" name="turtlebot" />
+-->
 <node pkg="move_turtle" type="move_turtle_node" name="moveTurtle" />
 
 
