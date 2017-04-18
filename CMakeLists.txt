@@ -95,13 +95,14 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  include
 )
 
 ## Declare a cpp library
 # add_library(move_turtle
 #   src/${PROJECT_NAME}/move_turtle.cpp
 # )
-add_executable(move_turtle_node src/moveTurtle.cpp)
+add_executable(move_turtle_node src/moveTurtle.cpp src/TurtleOperator.cpp)
 target_link_libraries(move_turtle_node ${catkin_LIBRARIES})
 
 ## Declare a cpp executable
