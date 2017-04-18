@@ -1,0 +1,7 @@
+<launch>
+
+<node pkg="turtlebot_gazebo" type="turtlebot_world" name="turtlebot" />
+<node pkg="move_turtle" type="move_turtle_node" name="moveTurtle" />
+
+
+</launch>
