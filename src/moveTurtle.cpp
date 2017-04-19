@@ -14,10 +14,6 @@ int main(int argc, char **argv) {
    ros::Publisher pub = n.advertise<geometry_msgs::Twist>("/mobile_base/commands/velocity", 1000);
    ros::Subscriber scan_sub = n.subscribe("/scan", 60, &TurtleOperator::scanCallback, &turtleOperator);
 
-   
-   
-   //std::cout << "Starting to spin …" << std::endl;
-
    ros::Rate loopRate(10);
 
    while( ros::ok() ) {
@@ -47,7 +43,3 @@ int main(int argc, char **argv) {
    return EXIT_SUCCESS;
 
 }
-
-
-
-
