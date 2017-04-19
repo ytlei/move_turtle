@@ -1,14 +1,23 @@
 <launch>
 
+ <arg name="enable_record" default="false"/>
+
  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
         <arg name="world_file" value="$(find move_turtle)/world/myplayground"/>
  </include>
 
 
-<!-- Turtlesim Node
-<node pkg="turtlebot_gazebo" type="turtlebot_world" name="turtlebot" />
--->
-<node pkg="move_turtle" type="move_turtle_node" name="moveTurtle" />
+<node   pkg="move_turtle" 
+	type="move_turtle_node" 
+	name="moveTurtle" 
+/>
 
+<node
+        pkg="rosbag"
+        name="record"
+        type="record"
+        args="-a -O session.bag -x /camera/(.*) -o $(find argo_bag_launch)/bags/default_record"
+        if="$(arg enable_record)"
+/>
 
 </launch>
