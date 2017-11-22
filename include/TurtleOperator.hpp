@@ -22,7 +22,6 @@
  *  SOFTWARE.
  ********************************************************************/
 
-
 /** @file TurtleOperator.hpp
  *  @brief Definition of class TurtleOperator
  *
@@ -32,7 +31,7 @@
  *
  *  @author Yi-ting Lei
  *  @date   11/21/2017
-*/
+ */
 
 #ifndef INCLUDE_TURTLEOPERATOR_HPP_
 #define INCLUDE_TURTLEOPERATOR_HPP_
@@ -42,16 +41,18 @@
 
 /**
  *  @brief Class definition of TurtleOperator class
-*/
+ */
 
 class TurtleOperator {
- public:
-    TurtleOperator():turn(false) {};
-    void scanCallback(const sensor_msgs::LaserScan::ConstPtr&);
-    bool rotate();
- private:
-    bool turn;
+public:
+	TurtleOperator() :
+			turn(false) {
+	}
+	;
+	void scanCallback(const sensor_msgs::LaserScan::ConstPtr&);
+	bool rotate();
+private:
+	bool turn;
 };
-
 
 #endif  // INCLUDE_TURTLEOPERATOR_HPP_

@@ -29,32 +29,30 @@
  *  Scan through ranges array see if it's smaller than desired distance
  *
  *  @author Yi-ting Lei
- *  @date   04/18/2017
-*/
-
+ *  @date   11/21/2017
+ */
 
 #include <stdlib.h>
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
 #include "TurtleOperator.hpp"
 
-
-void TurtleOperator::scanCallback(const sensor_msgs::LaserScan::ConstPtr& scan_msg) {
-  for (unsigned int i = 0; i < scan_msg->ranges.size(); i++) {
-   if (scan_msg->ranges[i] < 1) {
-     turn = true;
-     ROS_DEBUG_STREAM("range " << scan_msg->ranges[i] << " less than 5m");
-     return;
-   }
-  }
-  turn = false;
-  ROS_DEBUG_STREAM("no obstacle");
-  return;
+void TurtleOperator::scanCallback(
+		const sensor_msgs::LaserScan::ConstPtr& scan_msg) {
+	for (unsigned int i = 0; i < scan_msg->ranges.size(); i++) {
+		if (scan_msg->ranges[i] < 1) {
+			turn = true;
+			ROS_DEBUG_STREAM(
+					"range " << scan_msg->ranges[i] << " less than 5m");
+			return;
+		}
+	}
+	turn = false;
+	ROS_DEBUG_STREAM("no obstacle");
+	return;
 }
-
 
 bool TurtleOperator::rotate() {
-  return turn;
+	return turn;
 }
-
 
