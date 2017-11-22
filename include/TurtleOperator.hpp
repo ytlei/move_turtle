@@ -31,7 +31,7 @@
  *  obstacle
  *
  *  @author Yi-ting Lei
- *  @date   04/18/2017
+ *  @date   11/21/2017
 */
 
 #ifndef INCLUDE_TURTLEOPERATOR_HPP_
@@ -46,12 +46,12 @@
 
 class TurtleOperator {
  public:
-    TurtleOperator():turn(false) {}
+    TurtleOperator():turn(false) {};
     void scanCallback(const sensor_msgs::LaserScan::ConstPtr&);
     bool rotate();
  private:
     bool turn;
-}
+};
 
 
 #endif  // INCLUDE_TURTLEOPERATOR_HPP_
