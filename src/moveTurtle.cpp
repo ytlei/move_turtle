@@ -38,8 +38,8 @@
 #include <stdlib.h>
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
-#include <sensor_msgs/LaserScan.h>
 #include "TurtleOperator.hpp"
+#include <sensor_msgs/LaserScan.h>
 
 
 int main(int argc, char **argv) {
